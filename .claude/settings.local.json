@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(kill 59646)",
+      "Bash(git init)",
+      "Bash(git add -A)"
+    ]
+  }
+}

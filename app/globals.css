@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F2F2F7;
+  --card: #FFFFFF;
+  --primary-text: #1C1C1E;
+  --secondary-text: #8E8E93;
+  --border: #E5E5EA;
+  --green: #34C759;
+  --red: #FF3B30;
+  --orange: #FF9500;
+  --purple: #AF52DE;
+  --blue: #007AFF;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #F2F2F7;
+  color: #1C1C1E;
+  font-family: -apple-system, "SF Pro Display", "PingFang SC", "Noto Sans SC", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+/* Mobile app shell */
+.app-shell {
+  max-width: 390px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+  background: #F2F2F7;
+}
+
+/* Scrollable content area (above bottom nav) */
+.page-content {
+  padding-bottom: 90px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Bottom sheet overlay */
+.bottom-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 40;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #007AFF, #AF52DE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pro gradient */
+.pro-gradient {
+  background: linear-gradient(135deg, #FF9500 0%, #FF3B30 50%, #AF52DE 100%);
+}
+
+/* Segment control active */
+.segment-active {
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card-hover:active {
+  transform: scale(0.98);
+}
+
+/* Number font */
+.font-numeric {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+}
+
+/* Input focus */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  ring: 0;
+}
+
+/* Lang: Chinese font override */
+.lang-zh {
+  font-family: "PingFang SC", "Noto Sans SC", -apple-system, sans-serif;
+}
+
+/* Drag handle */
+.drag-handle {
+  width: 36px;
+  height: 4px;
+  background: #E5E5EA;
+  border-radius: 2px;
+  margin: 0 auto 16px;
+}
+
+/* Dark hero card */
+.hero-card {
+  background: linear-gradient(160deg, #1C1C1E 0%, #2C2C2E 100%);
+}
+
+/* Category colors */
+.cat-cash    { color: #007AFF; background: rgba(0,122,255,0.12); }
+.cat-stock   { color: #34C759; background: rgba(52,199,89,0.12); }
+.cat-realestate { color: #FF9500; background: rgba(255,149,0,0.12); }
+.cat-crypto  { color: #AF52DE; background: rgba(175,82,222,0.12); }
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #E5E5EA 25%, #F2F2F7 50%, #E5E5EA 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
