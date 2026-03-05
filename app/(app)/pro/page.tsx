@@ -16,56 +16,6 @@ const TAG_COLORS: Record<string, { bg: string; color: string }> = {
   red:    { bg: "rgba(255,59,48,0.12)",   color: "#FF3B30" },
 };
 
-const FEATURES = [
-  {
-    emoji: "🏦",
-    title: "Bank Auto-Sync",
-    tag: "Most Popular",
-    tagColor: "blue",
-    description:
-      "Connect Chase, Bank of America, Wells Fargo, HSBC and more. Auto-syncs balance daily.",
-  },
-  {
-    emoji: "₿",
-    title: "Coinbase Auto-Sync",
-    tag: "Most Popular",
-    tagColor: "blue",
-    description:
-      "Auto-sync: Coinbase. Manual entry supported for other brokers.",
-  },
-  {
-    emoji: "🏠",
-    title: "Property Valuation Tracking",
-    tag: "US Only",
-    tagColor: "orange",
-    description:
-      "Auto-updates US home values via Zillow. Non-US properties use manual entry.",
-  },
-  {
-    emoji: "📊",
-    title: "Portfolio Reports (PDF)",
-    tag: "Coming Soon",
-    tagColor: "purple",
-    description:
-      "Download quarterly and annual net worth reports as PDF or Excel. Share with your accountant or financial advisor.",
-  },
-  {
-    emoji: "👨‍👩‍👧",
-    title: "Family Wealth View",
-    tag: "Coming Soon",
-    tagColor: "purple",
-    description:
-      "Invite your spouse or family members. See combined household net worth in one dashboard.",
-  },
-  {
-    emoji: "🤖",
-    title: "AI Financial Insights",
-    tag: "Coming Soon",
-    tagColor: "purple",
-    description:
-      "AI analyzes your cross-border asset allocation and suggests optimizations based on your goals.",
-  },
-];
 
 export default function ProPage() {
   const { t, language } = useTranslation();
@@ -200,7 +150,7 @@ export default function ProPage() {
           {isZh ? "专业版功能" : "Pro Features"}
         </h2>
 
-        {FEATURES.map((feature, i) => {
+        {t.pro.features.map((feature, i) => {
           const tagStyle = TAG_COLORS[feature.tagColor] ?? TAG_COLORS.blue;
           return (
             <div
