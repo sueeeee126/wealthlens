@@ -96,6 +96,9 @@ export default function LoginPage() {
           <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.5)" }}>
             {t.tagline}
           </p>
+          <p className="text-center mt-3 mx-auto" style={{ fontSize: "13px", color: "rgba(255,255,255,0.45)", maxWidth: "280px", lineHeight: 1.6 }}>
+            Track your wealth across borders and get AI-powered guidance to optimize your global portfolio.
+          </p>
         </div>
       </div>
 
