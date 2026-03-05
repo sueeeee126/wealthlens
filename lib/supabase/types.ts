@@ -37,6 +37,7 @@ export interface Database {
           plan?: string;
           created_at?: string;
         };
+        Relationships: [];
       };
       assets: {
         Row: {
@@ -75,6 +76,7 @@ export interface Database {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       net_worth_history: {
         Row: {
@@ -98,7 +100,20 @@ export interface Database {
           snapshot_date?: string;
           created_at?: string;
         };
+        Relationships: [];
       };
+    };
+    Views: {
+      [_ in never]: never;
+    };
+    Functions: {
+      [_ in never]: never;
+    };
+    Enums: {
+      [_ in never]: never;
+    };
+    CompositeTypes: {
+      [_ in never]: never;
     };
   };
 }

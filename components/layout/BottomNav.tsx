@@ -3,12 +3,19 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useTranslation } from "@/lib/i18n";
 
-const NAV_ITEMS = [
-  { path: "/overview", svgKey: "overview",  labelKey: "overview" },
-  { path: "/assets",   svgKey: "assets",    labelKey: "assets" },
-  { path: "/trends",   svgKey: "trends",    labelKey: "trendsTab" },
-  { path: "/pro",      svgKey: "pro",       labelKey: "proTab", isPro: true },
-] as const;
+interface NavItem {
+  path: string;
+  svgKey: string;
+  labelKey: string;
+  isPro?: boolean;
+}
+
+const NAV_ITEMS: NavItem[] = [
+  { path: "/overview", svgKey: "overview", labelKey: "overview" },
+  { path: "/assets",   svgKey: "assets",   labelKey: "assets" },
+  { path: "/trends",   svgKey: "trends",   labelKey: "trendsTab" },
+  { path: "/pro",      svgKey: "pro",      labelKey: "proTab", isPro: true },
+];
 
 const NAV_SVGS: Record<string, React.ReactNode> = {
   overview: (
