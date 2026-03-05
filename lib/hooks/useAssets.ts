@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { createClient } from "@/lib/supabase/client";
 import type { Asset, CategoryKey } from "@/lib/utils/calculations";
 
@@ -19,7 +19,7 @@ export function useAssets(userId: string | null): UseAssetsReturn {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const supabase = createClient();
+  const supabase = useMemo(() => createClient(), []);
 
   const fetchAssets = useCallback(async () => {
     if (!userId) {
@@ -43,7 +43,7 @@ export function useAssets(userId: string | null): UseAssetsReturn {
       setAssets((data ?? []) as Asset[]);
     }
     setLoading(false);
-  }, [userId]);
+  }, [userId, supabase]);
 
   useEffect(() => {
     fetchAssets();
@@ -74,7 +74,7 @@ export function useAssets(userId: string | null): UseAssetsReturn {
       setAssets((prev) => [...prev, inserted as Asset]);
       return {};
     },
-    [userId]
+    [userId, supabase]
   );
 
   const updateAsset = useCallback(
@@ -96,7 +96,7 @@ export function useAssets(userId: string | null): UseAssetsReturn {
       );
       return {};
     },
-    []
+    [supabase]
   );
 
   const deleteAsset = useCallback(async (id: string) => {
@@ -109,7 +109,7 @@ export function useAssets(userId: string | null): UseAssetsReturn {
 
     setAssets((prev) => prev.filter((a) => a.id !== id));
     return {};
-  }, []);
+  }, [supabase]);
 
   return {
     assets,

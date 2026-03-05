@@ -38,7 +38,7 @@ export default function AssetsPage() {
       if (user) {
         supabase
           .from("profiles")
-          .select("plan, display_currency")
+          .select("*")
           .eq("id", user.id)
           .single()
           .then(({ data }) => {

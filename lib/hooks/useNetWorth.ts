@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { createClient } from "@/lib/supabase/client";
 import type { NetWorthHistory } from "@/lib/utils/calculations";
 
@@ -14,7 +14,7 @@ export interface UseNetWorthHistoryReturn {
 export function useNetWorthHistory(userId: string | null): UseNetWorthHistoryReturn {
   const [history, setHistory] = useState<NetWorthHistory[]>([]);
   const [loading, setLoading] = useState(true);
-  const supabase = createClient();
+  const supabase = useMemo(() => createClient(), []);
 
   const fetchHistory = useCallback(async () => {
     if (!userId) {
@@ -34,7 +34,7 @@ export function useNetWorthHistory(userId: string | null): UseNetWorthHistoryRet
       setHistory(data as NetWorthHistory[]);
     }
     setLoading(false);
-  }, [userId]);
+  }, [userId, supabase]);
 
   useEffect(() => {
     fetchHistory();
@@ -72,7 +72,7 @@ export function useNetWorthHistory(userId: string | null): UseNetWorthHistoryRet
         ];
       });
     },
-    []
+    [supabase]
   );
 
   return { history, loading, snapshot, refetch: fetchHistory };
