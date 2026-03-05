@@ -82,7 +82,7 @@ export const zh: Strings = {
     comingSoon: "即将上线，我们会通知您！",
     features: [
       { emoji: "🏦", title: "银行自动同步",      tag: "最受欢迎", tagColor: "blue",   description: "自动同步摩根大通、美国银行、富国银行、汇丰等。每日自动更新余额。" },
-      { emoji: "₿",  title: "Coinbase 自动同步", tag: "最受欢迎", tagColor: "blue",   description: "自动同步：Coinbase。其他券商支持手动录入。" },
+      { emoji: "₿",  title: "Coinbase 自动同步", tag: "最受欢迎", tagColor: "blue",   description: "自动同步Coinbase，其他券商支持手动录入。" },
       { emoji: "🏠", title: "房产估值追踪",      tag: "仅限美国", tagColor: "orange", description: "通过 Zillow 自动更新美国房产估值，海外房产支持手动录入。" },
       { emoji: "📊", title: "投资组合报告",      tag: "即将上线", tagColor: "purple", description: "下载季度和年度净资产报告，支持 PDF 和 Excel 格式。" },
       { emoji: "👨‍👩‍👧", title: "家庭财富视图",   tag: "即将上线", tagColor: "purple", description: "邀请配偶或家庭成员，共同查看家庭总资产。" },
