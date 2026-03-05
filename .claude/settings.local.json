@@ -4,7 +4,12 @@
       "mcp__Claude_Preview__preview_start",
       "Bash(kill 59646)",
       "Bash(git init)",
-      "Bash(git add -A)"
+      "Bash(git add -A)",
+      "Bash(git commit:*)",
+      "Bash(git add lib/hooks/useAssets.ts lib/hooks/useNetWorth.ts app/\\\\\\(app\\\\\\)/assets/page.tsx)",
+      "Bash(git push)",
+      "Bash(git add app/\\\\\\(app\\\\\\)/assets/page.tsx lib/hooks/useAssets.ts lib/hooks/useNetWorth.ts)",
+      "Bash(git add .)"
     ]
   }
 }
